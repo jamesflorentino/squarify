@@ -4,10 +4,10 @@ A tool for square cropping images.
 
 ![Preview](https://raw.githubusercontent.com/jamesflorentino/squarify/master/preview.png)
 
-##### Acknowledgement
+# Acknowledgement
 
 James Florentino
 
-##### License
+# License
 
 MIT
