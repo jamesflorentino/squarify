@@ -30,6 +30,7 @@ var Squarify = (function () {
 
       var pxWidth = width + 'px';
       var pxHeight = height + 'px';
+
       el.style.width = pxWidth;
       el.style.height = pxHeight;
 
@@ -58,6 +59,9 @@ var Squarify = (function () {
       var el = this.el;
 
       el.addEventListener('mousedown', function (e) {
+        if (!_this.hasImage) {
+          return false;
+        }
         e.preventDefault();
         _this.isDragging = true;
         _this.lastPos = { x: e.clientX - _this.image.offsetLeft, y: e.clientY - _this.image.offsetTop };
@@ -75,7 +79,7 @@ var Squarify = (function () {
         var image = _this.image;
         var imageFaded = _this.imageFaded;
 
-        if (!_this.isDragging) {
+        if (!_this.hasImage || !_this.isDragging) {
           return false;
         }
 
@@ -154,6 +158,15 @@ var Squarify = (function () {
       if ('function' === typeof this.saved) {
         this.saved(canvasEl.toDataURL());
       }
+    }
+  }, {
+    key: 'hasImage',
+    get: function get() {
+      return this._hasImage;
+    },
+    set: function set(val) {
+      this._hasImage = val;
+      this.el.classList.add('-has-image');
     }
   }]);
 

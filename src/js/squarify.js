@@ -10,10 +10,20 @@ class Squarify {
     this.initializeEvents();
   }
 
+  get hasImage() {
+    return this._hasImage;
+  }
+
+  set hasImage(val) {
+    this._hasImage = val;
+    this.el.classList.add('-has-image');
+  }
+
   initializeCanvas() {
     const { width, height, el } = this;
     const pxWidth = `${width}px`;
     const pxHeight = `${height}px`;
+
     el.style.width = pxWidth;
     el.style.height = pxHeight;
 
@@ -39,6 +49,7 @@ class Squarify {
     const { el } = this;
 
     el.addEventListener('mousedown', e => {
+      if (!this.hasImage) { return false; }
       e.preventDefault();
       this.isDragging = true;
       this.lastPos = { x: e.clientX - this.image.offsetLeft, y: e.clientY - this.image.offsetTop };
@@ -54,7 +65,7 @@ class Squarify {
 
     el.addEventListener('mousemove', e => {
       const { image, imageFaded } = this;
-      if (!this.isDragging) { return false; }
+      if (!this.hasImage || !this.isDragging) { return false; }
 
       if (this.isLandscape) {
         let posY = e.clientY;

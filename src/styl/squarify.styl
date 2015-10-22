@@ -1,6 +1,13 @@
 .squarify {
   display: block;
   position: relative;
+  box-shadow: 0 0 1px black inset;
+  background: #eee;
+
+  &.-has-image {
+    background: transaprent;
+    box-shadow: none;
+  }
 
   canvas {
     position: absolute;
