@@ -61,7 +61,7 @@ var Squarify = (function () {
         e.preventDefault();
         _this.isDragging = true;
         _this.lastPos = { x: e.clientX - _this.image.offsetLeft, y: e.clientY - _this.image.offsetTop };
-        _this.stopDrag = function (e) {
+        _this.stopDrag = function () {
           _this.isDragging = false;
           _this.capture();
           document.body.onmouseup = false;
@@ -87,7 +87,7 @@ var Squarify = (function () {
           } else if (posY < _this.height - image.height) {
             posY = _this.height - image.height;
           }
-          image.style.top = imageFaded.style.top = posY;
+          image.style.top = imageFaded.style.top = posY + 'px';
         } else {
           var posX = e.clientX;
           posX -= _this.lastPos.x;
@@ -96,7 +96,7 @@ var Squarify = (function () {
           } else if (posX < _this.width - image.width) {
             posX = _this.width - image.width;
           }
-          image.style.left = imageFaded.style.left = posX;
+          image.style.left = imageFaded.style.left = posX + 'px';
         }
       });
 
@@ -130,7 +130,7 @@ var Squarify = (function () {
         var url = e.target.result;
         var img = new Image();
         img.src = e.target.result;
-        img.onload = function (e) {
+        img.onload = function () {
           _this2.isLandscape = img.width < img.height;
           var append = _this2.isLandscape ? 'width="' + _this2.width + '"' : 'height="' + _this2.height + '"';
           imageContainerEl.innerHTML = '<img src="' + url + '" ' + append + '>';

@@ -42,7 +42,7 @@ class Squarify {
       e.preventDefault();
       this.isDragging = true;
       this.lastPos = { x: e.clientX - this.image.offsetLeft, y: e.clientY - this.image.offsetTop };
-      this.stopDrag = (e) => {
+      this.stopDrag = () => {
         this.isDragging = false;
         this.capture();
         document.body.onmouseup = false;
@@ -64,7 +64,7 @@ class Squarify {
         } else if (posY < this.height - image.height) {
           posY = this.height - image.height;
         }
-        image.style.top = imageFaded.style.top = posY;
+        image.style.top = imageFaded.style.top = `${posY}px`;
       } else {
         let posX = e.clientX;
         posX -= this.lastPos.x;
@@ -73,7 +73,7 @@ class Squarify {
         } else if (posX < this.width - image.width) {
           posX = this.width - image.width;
         }
-        image.style.left = imageFaded.style.left = posX;
+        image.style.left = imageFaded.style.left = `${posX}px`;
       }
     });
 
@@ -102,7 +102,7 @@ class Squarify {
       let url = e.target.result;
       const img = new Image();
       img.src = e.target.result;
-      img.onload = (e) => {
+      img.onload = () => {
         this.isLandscape = img.width < img.height;
         let append = this.isLandscape ? `width="${this.width}"` : `height="${this.height}"`;
         imageContainerEl.innerHTML = `<img src="${url}" ${append}>`;
@@ -130,3 +130,5 @@ class Squarify {
 window.squarify = (params) => {
   return new Squarify(params || {});
 };
+
+
