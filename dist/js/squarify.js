@@ -150,7 +150,7 @@ var Squarify = (function () {
       var ctx = canvasEl.getContext('2d');
       ctx.drawImage(image, image.offsetLeft, image.offsetTop, image.width, image.height);
       if ('function' === typeof this.saved) {
-        this.saved(canvas.toDataURL());
+        this.saved(canvasEl.toDataURL());
       }
     }
   }]);
