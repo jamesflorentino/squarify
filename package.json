@@ -1,0 +1,30 @@
+{
+  "name": "squarify",
+  "version": "1.0.0",
+  "description": "convert images into square photos",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesflorentino/squarify.git"
+  },
+  "keywords": [
+    "html5",
+    "javascript"
+  ],
+  "author": "James O. Florentino <jamesflorentino@gmail.com> (http://jamesflorentino.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesflorentino/squarify/issues"
+  },
+  "homepage": "https://github.com/jamesflorentino/squarify#readme",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-babel": "5.0.3",
+    "grunt-contrib-connect": "0.11.2",
+    "grunt-contrib-stylus": "0.22.0",
+    "grunt-contrib-watch": "0.6.1"
+  }
+}
