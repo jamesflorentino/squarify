@@ -37,7 +37,8 @@ class Squarify {
 
   initializeEvents() {
     const { el } = this;
-    el.onmousedown = (e) => {
+
+    el.addEventListener('mousedown', e => {
       this.isDragging = true;
       this.lastPos = { x: e.clientX - this.image.offsetLeft, y: e.clientY - this.image.offsetTop };
       this.stopDrag = (e) => {
@@ -49,9 +50,10 @@ class Squarify {
       };
       document.body.addEventListener('mouseup', this.stopDrag);
       return false;
-    };
+    });
 
-    el.onmousemove = (e) => {
+    el.addEventListener('mousemove', e => {
+      console.log("value");
       const { image, imageFaded } = this;
       if (!this.isDragging) { return false; }
 
@@ -74,16 +76,24 @@ class Squarify {
         }
         image.style.left = imageFaded.style.left = posX;
       }
-    };
+    });
 
-    el.ondragover = (e) => false;
-    el.ondragend = (e) => false;
-    el.ondrop = (e) => {
+    el.addEventListener('dragover', e => {
+      e.preventDefault();
+      return false;
+    });
+
+    el.addEventListener('dragend', e => {
+      e.preventDefault();
+      return false;
+    });
+
+    el.addEventListener('drop', e => {
       e.preventDefault();
       if (e.dataTransfer.files.length) {
         this.fileDropped(e.dataTransfer.files[0]);
       }
-    };
+    });
   }
 
   fileDropped(dataFile) {

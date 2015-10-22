@@ -57,7 +57,7 @@ var Squarify = (function () {
 
       var el = this.el;
 
-      el.onmousedown = function (e) {
+      el.addEventListener('mousedown', function (e) {
         _this.isDragging = true;
         _this.lastPos = { x: e.clientX - _this.image.offsetLeft, y: e.clientY - _this.image.offsetTop };
         _this.stopDrag = function (e) {
@@ -69,9 +69,10 @@ var Squarify = (function () {
         };
         document.body.addEventListener('mouseup', _this.stopDrag);
         return false;
-      };
+      });
 
-      el.onmousemove = function (e) {
+      el.addEventListener('mousemove', function (e) {
+        console.log("value");
         var image = _this.image;
         var imageFaded = _this.imageFaded;
 
@@ -98,20 +99,24 @@ var Squarify = (function () {
           }
           image.style.left = imageFaded.style.left = posX;
         }
-      };
+      });
 
-      el.ondragover = function (e) {
+      el.addEventListener('dragover', function (e) {
+        e.preventDefault();
         return false;
-      };
-      el.ondragend = function (e) {
+      });
+
+      el.addEventListener('dragend', function (e) {
+        e.preventDefault();
         return false;
-      };
-      el.ondrop = function (e) {
+      });
+
+      el.addEventListener('drop', function (e) {
         e.preventDefault();
         if (e.dataTransfer.files.length) {
           _this.fileDropped(e.dataTransfer.files[0]);
         }
-      };
+      });
     }
   }, {
     key: 'fileDropped',
