@@ -18,13 +18,22 @@
 
   .squarify-img-container {
     position: absolute;
-    overflow: hidden;
     text-align: left;
     z-index: 2;
+    width: 100%;
+
+    &.-preview {
+      > img {
+        width: 100%;
+      }
+    }
+
+    &.-cropped {
+      overflow: hidden;
+    }
 
     &.-faded {
       opacity: 0.25;
-      overflow: visible;
     }
 
     > img {

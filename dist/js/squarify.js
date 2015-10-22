@@ -35,7 +35,7 @@ var Squarify = (function () {
       el.style.height = pxHeight;
 
       var imageContainerEl = this.imageContainerEl = document.createElement('div');
-      imageContainerEl.className = 'squarify-img-container';
+      imageContainerEl.className = 'squarify-img-container -cropped';
       imageContainerEl.style.width = pxWidth;
       imageContainerEl.style.height = pxHeight;
       el.appendChild(imageContainerEl);
