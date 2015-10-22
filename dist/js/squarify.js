@@ -28,19 +28,21 @@ var Squarify = (function () {
       var height = this.height;
       var el = this.el;
 
-      el.style.width = width;
-      el.style.height = height;
+      var pxWidth = width + 'px';
+      var pxHeight = height + 'px';
+      el.style.width = pxWidth;
+      el.style.height = pxHeight;
 
       var imageContainerEl = this.imageContainerEl = document.createElement('div');
       imageContainerEl.className = 'squarify-img-container';
-      imageContainerEl.style.width = width;
-      imageContainerEl.style.height = height;
+      imageContainerEl.style.width = pxWidth;
+      imageContainerEl.style.height = pxHeight;
       el.appendChild(imageContainerEl);
 
       var imageContainerFadedEl = this.imageContainerFadedEl = document.createElement('div');
       imageContainerFadedEl.className = 'squarify-img-container -faded';
-      imageContainerFadedEl.style.width = height;
-      imageContainerFadedEl.style.height = height;
+      imageContainerFadedEl.style.width = pxWidth;
+      imageContainerFadedEl.style.height = pxHeight;
       el.appendChild(imageContainerFadedEl);
 
       var canvasEl = this.canvasEl = document.createElement('canvas');

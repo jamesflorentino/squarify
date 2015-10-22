@@ -12,19 +12,21 @@ class Squarify {
 
   initializeCanvas() {
     const { width, height, el } = this;
-    el.style.width = width;
-    el.style.height = height;
+    const pxWidth = `${width}px`;
+    const pxHeight = `${height}px`;
+    el.style.width = pxWidth;
+    el.style.height = pxHeight;
 
     const imageContainerEl = this.imageContainerEl = document.createElement('div');
     imageContainerEl.className = 'squarify-img-container';
-    imageContainerEl.style.width = width;
-    imageContainerEl.style.height = height;
+    imageContainerEl.style.width = pxWidth;
+    imageContainerEl.style.height = pxHeight;
     el.appendChild(imageContainerEl);
 
     const imageContainerFadedEl= this.imageContainerFadedEl = document.createElement('div');
     imageContainerFadedEl.className = 'squarify-img-container -faded';
-    imageContainerFadedEl.style.width = height;
-    imageContainerFadedEl.style.height = height;
+    imageContainerFadedEl.style.width = pxWidth;
+    imageContainerFadedEl.style.height = pxHeight;
     el.appendChild(imageContainerFadedEl);
 
     const canvasEl = this.canvasEl = document.createElement('canvas');

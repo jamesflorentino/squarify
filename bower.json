@@ -1,0 +1,22 @@
+{
+  "name": "squarify",
+  "description": "convert images into square photos",
+  "main": "src/index.js",
+  "authors": [
+    "James O. Florentino <jamesflorentino@gmail.com> (http://jamesflorentino.com/)"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "html5",
+    "javascript"
+  ],
+  "homepage": "https://github.com/jamesflorentino/squarify",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
