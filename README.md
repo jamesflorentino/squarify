@@ -2,7 +2,7 @@
 
 ![Preview](https://raw.githubusercontent.com/jamesflorentino/squarify/master/preview.png)
 
-A widget for cropping images in square photos.
+A widget for cropping images into square photos.
 
 This is a very straightforward and lightweight tool for cropping images and turning them into square photos similar to what you'd find in Instagram.
 
