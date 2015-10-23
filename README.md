@@ -50,6 +50,11 @@ Set the height of the widget.
 
 Callback function for catching the dataURL
 
+
+# Development
+
+`grunt serve` to start development.
+
 # Acknowledgement
 
 James Florentino
