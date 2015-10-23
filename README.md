@@ -44,9 +44,11 @@ Set the width of the widget.
 
 ### height
 
-*number*
-
 Set the height of the widget.
+
+### save
+
+Callback function for catching the dataURL
 
 # Acknowledgement
 
