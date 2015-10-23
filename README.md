@@ -36,6 +36,17 @@ squarify({
 });
 ```
 
+# Options
+
+### width
+
+Set the width of the widget.
+
+### height
+
+*number*
+
+Set the height of the widget.
 
 # Acknowledgement
 
