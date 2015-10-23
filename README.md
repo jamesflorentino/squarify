@@ -14,10 +14,10 @@ Basic Usage
 <link rel="stylesheet" href="squarify.css">
 <script src="squarify.js"></script>
 <div class="squarify"></div>
-```
 
-```javascript
-squarify();
+<script>
+  squarify();
+</script>
 ```
 
 Set custom width and height
